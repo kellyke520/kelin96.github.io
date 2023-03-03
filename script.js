@@ -9,6 +9,31 @@ let timer90 = document.querySelector('.set-timer-90')
 let cancelBtn = document.querySelector('.cancel-btn')
 let delay
 
+function loadXMLDoc(api,url,callback){
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+        console.log('qingqiu成功')
+        typeof callback == "function" && callback(xmlhttp.responseText)
+		}
+	}
+	xmlhttp.open("GET",api+url,true);
+	xmlhttp.send();
+}
+
+
 window.onresize = function () {
   document.body.style.minHeight = window.innerHeight + 'px'
 }
@@ -25,7 +50,21 @@ form.addEventListener('submit', (e) => {
   mediaInput.blur()
   card.classList.add('turn-to-back')
   delay = window.setTimeout(function () {
-    player.src = api + mediaURL
+    
+    // player.src = api + mediaURL
+
+    loadXMLDoc(api,mediaURL,(res)=>{
+      let res_=JSON.parse(res)
+
+      console.log('---------',typeof res_,res_,typeof res,JSON)
+      if(res_.code==200){
+        let hostUrl='https://upos-hz-mirrorakam.akamaized.net/'
+        let arr= res_.url.split('.com/')
+        // player.src=hostUrl+arr[1]
+        player.src=res_.url
+        
+      }
+    })
   }, 800)
 
   returnBtn.addEventListener('click', (e) => {
