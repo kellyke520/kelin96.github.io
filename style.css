@@ -1,6 +1,4 @@
 html {
-
-
   font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
   -webkit-user-select: none;
   user-select: none;
@@ -39,8 +37,8 @@ body {
 .card {
   position: relative;
   transform-style: preserve-3d;
-  width: 800px;
-  height: 550px;
+  width: 300px;
+  height: 450px;
   border-radius: 30px;
   box-shadow:  20px 20px 60px var(--shadow-right-bottom-color), 
               -20px -20px 60px var(--shadow-left-top-color);
@@ -80,7 +78,7 @@ body {
 }
 
 .card-front img {
-  width: 50%;
+  width: 100%;
 }
 
 .card-front .desc {
@@ -111,7 +109,7 @@ body {
 }
 
 .card-front form #media-url {
-  width: 100%;
+  width: 150%;
   line-height: 30px;
   outline: none;
   padding-left: 20px;
@@ -123,9 +121,9 @@ body {
               inset -2px -2px 4px var(--input-right-bottom-color);
 }
 
-/* .card-front form #media-url:hover {
+.card-front form #media-url:hover {
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
-} */
+}
 
 .card-front form .apis {
   width: 100%;
@@ -137,9 +135,9 @@ body {
 }
 
 .card-front form .play {
-  width: 66%;
+  width: 50%;
   line-height: 30px;
-  /* align-self: flex-end; */
+  align-self: flex-end;
   outline: none;
   border: 0;
   border-radius: 25px;
@@ -159,6 +157,10 @@ body {
   background: linear-gradient(145deg, #6e6e6e, #838383);
   box-shadow:  2px 2px 4px #686868, 
                 -2px -2px 4px #8c8c8c;
+}
+.btn-wrap{
+  width: 100%;
+  text-align: center;
 }
 
 /* 背面 */
