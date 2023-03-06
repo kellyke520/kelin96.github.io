@@ -51,18 +51,21 @@ form.addEventListener('submit', (e) => {
   card.classList.add('turn-to-back')
   delay = window.setTimeout(function () {
     
-    // player.src = api + mediaURL
-
+    // player.src = api + mediaURL  
     loadXMLDoc(api,mediaURL,(res)=>{
       let res_=JSON.parse(res)
 
       console.log('---------',typeof res_,res_,typeof res,JSON)
       if(res_.code==200){
-        let hostUrl='https://upos-hz-mirrorakam.akamaized.net/'
-        let arr= res_.url.split('.com/')
-        // player.src=hostUrl+arr[1]
+        // if(res_.url.indexOf('.com/')!=-1){
+        //   let hostUrl='https://upos-hz-mirrorakam.akamaized.net/'
+        //   let arr= res_.url.split('.com/')
+        //   player.src=hostUrl+arr[1]
+        // }
         player.src=res_.url
-        
+      }else{
+        alert('转化失败，请重试！！！')
+        location.reload()
       }
     })
   }, 800)

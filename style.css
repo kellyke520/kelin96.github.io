@@ -53,7 +53,7 @@ body {
   box-shadow:  20px 20px 60px var(--shadow-right-bottom-color), 
               -20px -20px 60px var(--shadow-left-top-color);
   transform: rotateY(0deg);
-  transition: 1s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: 3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .card.turn-to-back {
@@ -109,6 +109,7 @@ body {
 .card-front .desc .sub-text {
   font-size: 12px;
   color: var(--shadow-right-bottom-color);
+  background: var(--theme-color);
 }
 
 .card-front .desc .link {
@@ -215,10 +216,10 @@ body {
   cursor: pointer;
 }
 
-.card .card-back .button-container .return {
+/* .card .card-back .button-container .return {
   margin: auto;
   transform: translateX(50%);
-}
+} */
 
 .card .card-back .return:hover,
 .card .card-back .timer:hover {
