@@ -53,7 +53,7 @@ body {
   box-shadow:  20px 20px 60px var(--shadow-right-bottom-color), 
               -20px -20px 60px var(--shadow-left-top-color);
   transform: rotateY(0deg);
-  transition: 2s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: 1.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .card.turn-to-back {

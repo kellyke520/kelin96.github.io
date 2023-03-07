@@ -7,7 +7,7 @@ let timer30 = document.querySelector('.set-timer-30')
 let timer60 = document.querySelector('.set-timer-60')
 let timer90 = document.querySelector('.set-timer-90')
 let cancelBtn = document.querySelector('.cancel-btn')
-let musicLink = document.querySelector('#music')
+let videoLink = document.querySelector('#video')
 let delay
 
 function loadXMLDoc(api,url,callback){
@@ -51,25 +51,31 @@ form.addEventListener('submit', (e) => {
   mediaInput.blur()
   card.classList.add('turn-to-back')
   delay = window.setTimeout(function () {
-    
-    // player.src = api + mediaURL  
-    loadXMLDoc(api,mediaURL,(res)=>{
-      let res_=JSON.parse(res)
+    let strArr=mediaURL.split('?id=')
+    let str=''
+    if(strArr[1]){
+      let subStrArr=strArr[1].split('&')
+      str=subStrArr[0]
+    }
+    console.log(str,'str----')
 
-      console.log('---------',typeof res_,res_,typeof res,JSON)
-      if(res_.code==200){
-        // if(res_.url.indexOf('.com/')!=-1){
-        //   let hostUrl='https://upos-hz-mirrorakam.akamaized.net/'
-        //   let arr= res_.url.split('.com/')
-        //   player.src=hostUrl+arr[1]
-        // }
-        player.src=res_.url
-      }else{
-        alert('转化失败，请重试！！！')
-        location.reload()
-      }
-    })
-  }, 1)
+    player.src = api + str
+
+    setTimeout(() => {
+      alert('转化成功，用浏览器打开下载吧！！！') 
+    }, 3000);
+    // loadXMLDoc(api,mediaURL,(res)=>{
+    //   let res_=JSON.parse(res)
+
+    //   console.log('---------',typeof res_,res_,typeof res,JSON)
+    //   if(res_.code==200){
+    //     player.src=res_.url
+    //   }else{
+    //     alert('转化失败，请重试！！！')
+    //     location.reload()
+    //   }
+    // })
+  }, 0)
 
   returnBtn.addEventListener('click', (e) => {
     player.src = ''
@@ -112,8 +118,8 @@ cancelBtn.addEventListener('click', (e) => {
   }
 })
 
-musicLink.addEventListener('click',(e)=>{
+videoLink.addEventListener('click',(e)=>{
   e.preventDefault()
   console.log('click')
-  window.open(location.href+musicLink.href)
+  window.open(location.href)
 })
