@@ -121,5 +121,6 @@ cancelBtn.addEventListener('click', (e) => {
 videoLink.addEventListener('click',(e)=>{
   e.preventDefault()
   console.log('click')
+  console.log(location.href,ocation.origin)
   location.href=location.origin
 })
