@@ -53,6 +53,7 @@ form.addEventListener('submit', (e) => {
   delay = window.setTimeout(function () {
     
     // player.src = api + mediaURL  
+    mediaURL=mediaURL.trim()
     loadXMLDoc(api,mediaURL,(res)=>{
       let res_=JSON.parse(res)
 
@@ -115,5 +116,5 @@ cancelBtn.addEventListener('click', (e) => {
 musicLink.addEventListener('click',(e)=>{
   e.preventDefault()
   console.log('click')
-  window.open(location.href+musicLink.href)
+  window.open(musicLink.href)
 })
