@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
-  <title>小柯 B站 视频解析</title>
+  <title>小柯 网易云音乐 解析下载</title>
   <link rel="shortcut icon" href="./ke.ico">
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -13,22 +13,22 @@
     <div class="card-front">
       <!-- <img src="./cats_42kb.jpg" alt="cat"> -->
       <div style="height: 180px;">
-        <a id="music" href="music/index.html">去解析下载网易云音乐</a>
+        <!-- <a id="video" href="">返回</a> -->
       </div>
       <div class="desc">
         <div class="text">
-          <b>小柯 B站 视频解析</b><br>
+          <b>小柯 网易云音乐 解析下载</b><br>
         </div>
         <div class="sub-text">
-          温馨提示：请输入分享的视频纯链接(不要包含中文)；一次失败可以多尝试几次；
+          温馨提示：请输入分享的音乐链接(直接粘贴音乐分享链接)；一次失败可以多尝试几次；对vip音乐无效；
         </div>
         <!-- <a href="https://vip.heimaokeji.xyz" class="link" target="_blank">https://vip.heimaokeji.xyz</a> -->
       </div>
       <form>
-        <input type="url" id="media-url" placeholder="请输入视频链接" required autocomplete="off">
+        <input type="text" id="media-url" placeholder="请输入音乐链接(分享文本)" required autocomplete="off">
         <div class="apis">
           <div>
-            <input type="radio" id="api1" class="api" name="contact" value="https://tenapi.cn/video/?url=" checked>
+            <input type="radio" id="api1" class="api" name="contact" value="http://music.163.com/song/media/outer/url?id=" checked>
             <label for="api1"><b>线路1</b></label>
           </div>
           <!-- <div>
@@ -60,7 +60,7 @@
 	  <p>
 	    <!-- <span class="cprt">Copyright</span> -->
 	    <span id="copy-date">&copy </span>
-	    <a class="author-link" href="https://github.com/kelin96/" target="_blank">Jame Lin</a>
+	    <a class="author-link" href="https://github.com/kellyke520" target="_blank">lin</a>
 	    <!-- <a class="mail-link" href="https://mail.qq.com" target="_blank"> | 邮件反馈 </a>1464404227@qq.com -->
 	  </p>
 	</footer>
